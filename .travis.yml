@@ -6,4 +6,5 @@ node_js:
   - v4.2.4
 before_script:
   - curl -sSkL https://git.io/perl-install | bash -s ./perl
-  - ./perl/cpanm Text::Xslate
+  - ./perl/bin/cpanm Text::Xslate
+  - export PATH=$PATH:$PWD/perl/bin
