@@ -1,6 +1,7 @@
 #!/usr/bin/env perl
 use strict;
 use warnings;
+use lib '../../perl/lib/';
 
 use Text::Xslate::Runner;
 
