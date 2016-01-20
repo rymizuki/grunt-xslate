@@ -5,4 +5,5 @@ node_js:
   - v0.12
   - v4.2.4
 before_script:
-  - cpanm --quiet --installdeps --notest . Text::Xslate
+  - curl -sSkL https://git.io/perl-install | bash -s ./perl
+  - ./perl/cpanm Text::Xslate
