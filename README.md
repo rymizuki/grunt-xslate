@@ -2,6 +2,9 @@
 
 Compile Text::Xslate template files from Grunt.
 
+[![npm version](https://badge.fury.io/js/grunt-xslate.svg)](http://badge.fury.io/js/grunt-xslate) 
+[![Build Status](https://travis-ci.org/rymizuki/grunt-xslate.svg?branch=master)](https://travis-ci.org/rymizuki/grunt-xslate) 
+
 ## Getting Started
 
 This plugin requires Grunt `~0.4.0`
