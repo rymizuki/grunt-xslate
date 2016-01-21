@@ -8,4 +8,3 @@ before_script:
   - curl -sSkL https://git.io/perl-install | bash -s $PWD/perl
   - export PATH=$PWD/perl/bin:$PATH
   - cpanm Text::Xslate
-  - perldoc Text::Xslate
