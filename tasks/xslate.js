@@ -1,5 +1,7 @@
 var which  = require('which'),
-    Xslate = require('../lib/xslate')
+    _      = require('lodash'),
+    Q      = require('q'),
+    Xslate = require('../lib/xslate').Xslate
 
 module.exports = function (grunt) {
   grunt.registerMultiTask('xslate', 'build templates from Text::Xslate', function () {
@@ -7,16 +9,14 @@ module.exports = function (grunt) {
       cartonExec: false,
       syntax:     'Kolon',
       data:       null,
-      runner:     null,
+      runner:     'xslate',
     })
 
     // ensure runner.
     try {
-      grunt.file.isFile(runner) || which.sync(runner)
+      grunt.file.isFile(options.runner) || which.sync(options.runner)
     } catch (err) {
-      var message = "You need to have Text::Xslate installed and in your PATH for this task to work.\n"+
-                    "`cpanm Text::Xslate` or `echo \"requires 'Text::Xslate';\" > cpanfile; carton install\n`"
-      return grunt.fatal(message)
+      throw new Error(err)
     }
 
     var xslate = new Xslate({
@@ -30,12 +30,14 @@ module.exports = function (grunt) {
     var promises = _.reduce(this.files, function (prev, file) {
       _.each(file.src, function (filepath) {
         var promise = xslate.exec(filepath, data).then(function (content) {
+          console.log(content)
           grunt.file.write(file.dest, content)
         }).catch(function (rejection) {
-          return rejection
+          throw new Error(rejection)
         })
         prev.push(promise)
       })
+      return prev
     }, [])
 
     return Q.all(promises)
