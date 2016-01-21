@@ -69,6 +69,30 @@ This will be passed to `define` option of `xslate` command.
 
 You can specified template syntax.(e.g. Kolon)
 
+#### formatter
+
+You can rocess the data to be specified `define`
+
+```json
+{
+  xslate: {
+    example: {
+      options: {
+        formatter: function (value, name) {
+          return JSON.stringify(value) // --define="foo={"fuga":1000, "hoge":2000}"
+        },
+        data: {
+          foo: {
+            fuga: 1000,
+            hoge: 2000,
+          }
+        }
+      }
+    }
+  }
+}
+```
+
 ### Usage Example
 
 ```js

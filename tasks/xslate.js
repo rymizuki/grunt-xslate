@@ -10,6 +10,7 @@ module.exports = function (grunt) {
       syntax:     'Kolon',
       data:       null,
       runner:     'xslate',
+      formatter:  null,
     })
 
     // ensure runner.
@@ -25,6 +26,11 @@ module.exports = function (grunt) {
       runner:     options.runner,
     })
     var data = options.data
+
+    // set formatter
+    if (options.formatter) {
+      xslate.setFormatter(options.formatter)
+    }
 
     // execute xslate
     var promises = _.reduce(this.files, function (prev, file) {
