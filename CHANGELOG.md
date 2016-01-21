@@ -1,3 +1,15 @@
+<a name="0.0.2"></a>
+## 0.0.2 (2016-01-21)
+
+
+### feat
+
+* feat(xslate): add feature formatter ([fe5c428](https://github.com/rymizuki/grunt-xslate/commit/fe5c428))
+
+* update README ([27cdffc](https://github.com/rymizuki/grunt-xslate/commit/27cdffc))
+
+
+
 <a name="0.0.1"></a>
 ## 0.0.1 (2016-01-21)
 
