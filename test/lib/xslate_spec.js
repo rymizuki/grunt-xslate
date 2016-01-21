@@ -194,5 +194,21 @@ describe('xslate', function () {
         })
       })
     })
+    describe('xslate.formatter', function () {
+      beforeEach(function () {
+        this.xslate = new xslate.Xslate()
+      })
+      it('should be define formatted', function () {
+        this.xslate.setFormatter(function (value, name) {
+          assert.equal(name, 'name')
+          assert.equal(value, 'value')
+          return 'customized '+value
+        })
+        var command = this.xslate.createCommand('path/to.tx', {
+          name: 'value'
+        })
+        assert.equal(command, 'xslate --syntax=Kolon --define "name=customized value" path/to.tx')
+      })
+    })
   })
 })
