@@ -1,6 +1,6 @@
 {
   "name": "grunt-xslate",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "main": "index.js",
   "scripts": {
     "bump": "mversion $1 -m '%s'",

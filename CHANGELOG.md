@@ -1,3 +1,18 @@
+<a name="0.1.0"></a>
+# 0.1.0 (2016-01-28)
+
+
+### fix
+
+* fix(test): fixed test ([1b6b52c](https://github.com/rymizuki/grunt-xslate/commit/1b6b52c))
+* fix(xslate): fixed issue of parse define option. ([4096364](https://github.com/rymizuki/grunt-xslate/commit/4096364))
+
+### refactor
+
+* refactor(grunt-xslate): remove console.log ([372e9b8](https://github.com/rymizuki/grunt-xslate/commit/372e9b8))
+
+
+
 <a name="0.0.2"></a>
 ## 0.0.2 (2016-01-21)
 
