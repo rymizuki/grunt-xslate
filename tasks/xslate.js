@@ -36,7 +36,6 @@ module.exports = function (grunt) {
     var promises = _.reduce(this.files, function (prev, file) {
       _.each(file.src, function (filepath) {
         var promise = xslate.exec(filepath, data).then(function (content) {
-          console.log(content)
           grunt.file.write(file.dest, content)
         }).catch(function (rejection) {
           throw new Error(rejection)
