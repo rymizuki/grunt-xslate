@@ -28,10 +28,10 @@ describe('xslate', function () {
         })
       })
       describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
-        it('should be `xslate --syntax=Kolon --define "name=hoge" path/to.tx`', function () {
+        it('should be `xslate --syntax=Kolon --define \'name=hoge\' path/to.tx`', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
-            'xslate --syntax=Kolon --define "name=hoge" path/to.tx'
+            'xslate --syntax=Kolon --define \'name=hoge\' path/to.tx'
             )
         })
       })
@@ -58,10 +58,10 @@ describe('xslate', function () {
         })
       })
       describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
-        it('should be `carton exec xslate --syntax=Kolon --define "name=hoge" path/to.tx`', function () {
+        it('should be `carton exec xslate --syntax=Kolon --define \'name=hoge\' path/to.tx`', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
-            'carton exec xslate --syntax=Kolon --define "name=hoge" path/to.tx'
+            'carton exec xslate --syntax=Kolon --define \'name=hoge\' path/to.tx'
             )
         })
       })
@@ -89,10 +89,10 @@ describe('xslate', function () {
         })
       })
       describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
-        it('should be `xslate --syntax=TTerse --define "name=hoge" path/to.tx`', function () {
+        it('should be `xslate --syntax=TTerse --define \'name=hoge\' path/to.tx`', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
-            'xslate --syntax=TTerse --define "name=hoge" path/to.tx'
+            'xslate --syntax=TTerse --define \'name=hoge\' path/to.tx'
             )
         })
       })
@@ -119,10 +119,10 @@ describe('xslate', function () {
         })
       })
       describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
-        it('should be `xslate --syntax=Kolon --define "name=hoge" path/to.tx`', function () {
+        it('should be `xslate --syntax=Kolon --define \'name=hoge\' path/to.tx`', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
-            'xslate --syntax=Kolon --define "name=hoge" path/to.tx'
+            'xslate --syntax=Kolon --define \'name=hoge\' path/to.tx'
             )
         })
       })
@@ -149,10 +149,10 @@ describe('xslate', function () {
         })
       })
       describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
-        it('should be `xslate --syntax=Kolon --define "name=hoge" path/to.tx`', function () {
+        it('should be `xslate --syntax=Kolon --define \'name=hoge\' path/to.tx`', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
-            './stuff/runner.pl --syntax=Kolon --define "name=hoge" path/to.tx'
+            './stuff/runner.pl --syntax=Kolon --define \'name=hoge\' path/to.tx'
             )
         })
       })
@@ -207,7 +207,7 @@ describe('xslate', function () {
         var command = this.xslate.createCommand('path/to.tx', {
           name: 'value'
         })
-        assert.equal(command, 'xslate --syntax=Kolon --define "name=customized value" path/to.tx')
+        assert.equal(command, 'xslate --syntax=Kolon --define \'name=customized value\' path/to.tx')
       })
     })
   })
