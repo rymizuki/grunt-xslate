@@ -46,6 +46,7 @@ describe('xslate', function () {
             cartonExec: true,
             syntax: "Kolon",
             runner: "xslate",
+            path:   null,
           })
         })
       })
@@ -77,6 +78,7 @@ describe('xslate', function () {
             cartonExec: false,
             syntax: "TTerse",
             runner: "xslate",
+            path: null,
           })
         })
       })
@@ -137,6 +139,7 @@ describe('xslate', function () {
             cartonExec: false,
             syntax: "Kolon",
             runner: "./stuff/runner.pl",
+            path: null,
           })
         })
       })
@@ -153,6 +156,37 @@ describe('xslate', function () {
           assert.equal(
             this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
             './stuff/runner.pl --syntax=Kolon --define \'name=hoge\' path/to.tx'
+            )
+        })
+      })
+    })
+    describe('new Xslate({path: "path/to"})', function () {
+      beforeEach(function () {
+        this.xslate = new xslate.Xslate({path: 'path/to'})
+      })
+      describe('xslate.options', function () {
+        it('should be {syntax: "Kolon", cartonExec: false, runner: "./stuff/runner.pl"}', function () {
+          assert.deepEqual(this.xslate.options, {
+            cartonExec: false,
+            syntax: "Kolon",
+            runner: "xslate",
+            path:   'path/to',
+          })
+        })
+      })
+      describe('xslate.createCommand("path/to.tx")', function () {
+        it('should be `xslate --syntax=TTerse --path=path/to path/to.tx`', function () {
+          assert.equal(
+            this.xslate.createCommand('path/to.tx'),
+            'xslate --syntax=Kolon --path=\'path/to\' path/to.tx'
+          )
+        })
+      })
+      describe('xslate.createCommand("path/to.tx", {name: "hoge"})', function () {
+        it('should be `xslate --syntax=Kolon --path=\'path/to\' --define \'name=hoge\' path/to.tx`', function () {
+          assert.equal(
+            this.xslate.createCommand('path/to.tx', {name: 'hoge'}),
+            'xslate --syntax=Kolon --path=\'path/to\' --define \'name=hoge\' path/to.tx'
             )
         })
       })
