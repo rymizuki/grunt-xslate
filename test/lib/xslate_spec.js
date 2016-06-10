@@ -16,6 +16,7 @@ describe('xslate', function () {
             cartonExec: false,
             syntax: "Kolon",
             runner: "xslate",
+            path:   null,
           })
         })
       })
@@ -109,6 +110,7 @@ describe('xslate', function () {
             cartonExec: false,
             syntax: "Kolon",
             runner: "xslate",
+            path:   null,
           })
         })
       })
