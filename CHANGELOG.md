@@ -1,3 +1,19 @@
+<a name="0.1.1"></a>
+## 0.1.1 (2016-06-10)
+
+
+### feat
+
+* feat(xslate): support path option ([b2fc18e](https://github.com/rymizuki/grunt-xslate/commit/b2fc18e))
+
+### fix
+
+* fix(test): fixed ([29bf918](https://github.com/rymizuki/grunt-xslate/commit/29bf918))
+* fix(test): fogot path fixed... ([50e9b30](https://github.com/rymizuki/grunt-xslate/commit/50e9b30))
+* fix(xslate): failed exception handling ([fd3ad76](https://github.com/rymizuki/grunt-xslate/commit/fd3ad76))
+
+
+
 <a name="0.1.0"></a>
 # 0.1.0 (2016-01-28)
 
